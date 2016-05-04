@@ -15,7 +15,6 @@ import { AceEditorDirective } from 'ng2-ace';
   directives: [AceEditorDirective],
   template: `
   <div ace-editor
-       id="editor"
        [text]="text"
        (textChanged)="onChange($event)"
        style="display:block; height: 80vh; width:100%"></div>
@@ -30,7 +29,7 @@ export class MyComponent {
   }
 }
 ```
-Important pieces to note in the HTML template: `[ace-editor]` attribute, `[text]` input, `(textChanged)` output. As per Ace, you must also make it a `display: block;` and give it a width, height, and id.
+Important pieces to note in the HTML template: `[ace-editor]` attribute, `[text]` input, `(textChanged)` output. As per Ace, you must also make it a `display: block;` and give it a width and height.
 
 # TODO
 
