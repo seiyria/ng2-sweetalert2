@@ -1,0 +1,34 @@
+{
+  "name": "ng2-ace",
+  "version": "0.0.1",
+  "description": "An ace editor directive for angular2.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seiyria/ng2-ace.git"
+  },
+  "keywords": [
+    "ng2",
+    "angular2",
+    "ace",
+    "ace",
+    "editor",
+    "ng2-ace",
+    "angular2-ace"
+  ],
+  "author": "Kyle Kemp <kyle@seiyria.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seiyria/ng2-ace/issues"
+  },
+  "homepage": "https://github.com/seiyria/ng2-ace#readme",
+  "dependencies": {
+    "brace": "^0.8.0"
+  },
+  "peerDependencies": {
+    "angular2": "2.0.0-beta.16"
+  }
+}
