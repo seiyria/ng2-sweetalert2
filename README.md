@@ -9,14 +9,16 @@ import { Component } from 'angular2/core';
 import { AceEditorDirective } from 'ng2-ace';
 
 @Component({
-  selector: 'creator',
-  inputs: ['project'],
   directives: [AceEditorDirective],
   template: `
-  <div ace-editor id="editor" [text]="text" (textChanged)="onChange($event)" style="display:block; height: 80vh; width:100%"></div>
+  <div ace-editor
+       id="editor"
+       [text]="text"
+       (textChanged)="onChange($event)"
+       style="display:block; height: 80vh; width:100%"></div>
   `
 })
-export class CreatorComponent {
+export class MyComponent {
   constructor() {
     this.text = 'test';
     this.onChange = (data) => {
