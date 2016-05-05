@@ -13,6 +13,7 @@ export class AceEditorDirective {
   }
 
   set text(value) {
+    if(value === this.oldVal) return;
     this.editor.setValue(value);
     this.editor.clearSelection();
     this.editor.focus();
@@ -27,7 +28,12 @@ export class AceEditorDirective {
     this.editor = ace.edit(el);
 
     this.editor.on('change', () => {
-      this.textChanged.next(this.editor.getValue());
+      const newVal = this.editor.getValue();
+      if(newVal === this.oldVal) return;
+      if(typeof this.oldVal !== 'undefined') {
+        this.textChanged.next(newVal);
+      }
+      this.oldVal = newVal;
     });
   }
 }
