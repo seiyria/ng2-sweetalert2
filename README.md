@@ -1,36 +1,48 @@
-# ng2-ace
-A basic ace editor directive for angular 2.
+# ng2-sweetalert2
+A service wrapping sweetalert2 for angular 2.
 
 # Install
-`npm i -s ng2-ace`
+`npm i -s ng2-sweetalert2`
 
-# Sample Usage
+# Usage
 
+First, make sure you have a CSS loader set up for webpack, like so:
+```
+{
+  test: /\.css/,
+  loader: 'style!css'
+},
+```
+
+Next, inject `SweetAlertService` into a component:
 ```js
-import { Component } from 'angular2/core';
-
-import { AceEditorDirective } from 'ng2-ace';
+import { SweetAlertService } from 'ng2-sweetalert2';
 
 @Component({
-  directives: [AceEditorDirective],
-  template: `
-  <div ace-editor
-       [text]="text"
-       (textChanged)="onChange($event)"
-       style="display:block; height: 80vh; width:100%"></div>
-  `
+  providers: [SweetAlertService]
 })
 export class MyComponent {
-  constructor() {
-    this.text = 'test';
-    this.onChange = (data) => {
-      console.log(data);
-    }
+
+  static get parameters() {
+    return [[SweetAlertService]];
   }
-}
+
+  constructor(swal) {
+    this.swalService = swal;
+  }
 ```
-Important pieces to note in the HTML template: `[ace-editor]` attribute, `[text]` input, `(textChanged)` output. As per Ace, you must also make it a `display: block;` and give it a width and height.
 
-# TODO
+# API
+See [limonte/sweetalert2](https://github.com/limonte/sweetalert2) for examples.
 
-Support themes and languages as an input.
+Function  | Arguments | Description
+--------  | --------- | -----------
+swal      | any       | Create a generic swal with any arguments.
+prompt    | object    | Create a swal that prompts user with a basic text entry field.
+confirm   | object    | Create a swal that confirms a user action.
+alert     | object    | Create a swal that alerts a user of something that happened.
+question  | object    | Wrapper for `alert` that sets type to `question`.
+success   | object    | Wrapper for `alert` that sets type to `success`.
+error     | object    | Wrapper for `alert` that sets type to `error`.
+warn      | object    | Wrapper for `alert` that sets type to `warn`.
+info      | object    | Wrapper for `alert` that sets type to `info`.
