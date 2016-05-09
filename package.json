@@ -1,6 +1,6 @@
 {
   "name": "ng2-sweetalert2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A service wrapping sweetalert2 for angular2.",
   "main": "index.js",
   "scripts": {
@@ -32,6 +32,6 @@
     "sweetalert2": "^2.2.5"
   },
   "peerDependencies": {
-    "angular2": "2.0.0-beta.16"
+    "@angular/platform-browser": "2.0.0-rc.1"
   }
 }

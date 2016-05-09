@@ -1,7 +1,7 @@
 
 import sweetalert from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
-import { window } from 'angular2/src/facade/browser';
+import { window } from '@angular/platform-browser/src/facade/browser';
 
 import assign from 'lodash.assign';
 
