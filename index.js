@@ -1,60 +1,93 @@
+'use strict';
 
-import sweetalert from 'sweetalert2';
-import 'sweetalert2/dist/sweetalert2.min.css';
-import { window } from '@angular/platform-browser/src/facade/browser';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SweetAlertService = undefined;
 
-import assign from 'lodash.assign';
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-export class SweetAlertService {
-  constructor() {}
+var _sweetalert = require('sweetalert2');
 
-  swal() {
-    return window.swal(...arguments);
+var _sweetalert2 = _interopRequireDefault(_sweetalert);
+
+require('sweetalert2/dist/sweetalert2.min.css');
+
+var _browser = require('@angular/platform-browser/src/facade/browser');
+
+var _lodash = require('lodash.assign');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var SweetAlertService = exports.SweetAlertService = function () {
+  function SweetAlertService() {
+    _classCallCheck(this, SweetAlertService);
   }
 
-  prompt(options) {
-    const baseOptions = {
-      showCancelButton: true,
-      confirmButtonText: 'Submit',
-      input: 'text'
-    };
-    return window.swal(assign(baseOptions, options));
-  }
+  _createClass(SweetAlertService, [{
+    key: 'swal',
+    value: function swal() {
+      return _browser.window.swal.apply(_browser.window, arguments);
+    }
+  }, {
+    key: 'prompt',
+    value: function prompt(options) {
+      var baseOptions = {
+        showCancelButton: true,
+        confirmButtonText: 'Submit',
+        input: 'text'
+      };
+      return _browser.window.swal((0, _lodash2.default)(baseOptions, options));
+    }
+  }, {
+    key: 'confirm',
+    value: function confirm(options) {
+      var baseOptions = {
+        showCancelButton: true,
+        confirmButtonText: 'Confirm',
+        type: 'warning'
+      };
+      return _browser.window.swal((0, _lodash2.default)(baseOptions, options));
+    }
+  }, {
+    key: 'alert',
+    value: function alert(options) {
+      var baseOptions = {
+        confirmButtonText: 'OK',
+        type: 'info'
+      };
+      return _browser.window.swal((0, _lodash2.default)(baseOptions, options));
+    }
+  }, {
+    key: 'question',
+    value: function question(options) {
+      return this.alert((0, _lodash2.default)({ type: 'question' }, options));
+    }
+  }, {
+    key: 'success',
+    value: function success(options) {
+      return this.alert((0, _lodash2.default)({ type: 'success' }, options));
+    }
+  }, {
+    key: 'error',
+    value: function error(options) {
+      return this.alert((0, _lodash2.default)({ type: 'error' }, options));
+    }
+  }, {
+    key: 'warn',
+    value: function warn(options) {
+      return this.alert((0, _lodash2.default)({ type: 'warn' }, options));
+    }
+  }, {
+    key: 'info',
+    value: function info(options) {
+      return this.alert((0, _lodash2.default)({ type: 'info' }, options));
+    }
+  }]);
 
-  confirm(options) {
-    const baseOptions = {
-      showCancelButton: true,
-      confirmButtonText: 'Confirm',
-      type: 'warning'
-    };
-    return window.swal(assign(baseOptions, options));
-  }
-
-  alert(options) {
-    const baseOptions = {
-      confirmButtonText: 'OK',
-      type: 'info'
-    };
-    return window.swal(assign(baseOptions, options));
-  }
-
-  question(options) {
-    return this.alert(assign({ type: 'question' }, options));
-  }
-
-  success(options) {
-    return this.alert(assign({ type: 'success' }, options));
-  }
-
-  error(options) {
-    return this.alert(assign({ type: 'error' }, options));
-  }
-
-  warn(options) {
-    return this.alert(assign({ type: 'warn' }, options));
-  }
-
-  info(options) {
-    return this.alert(assign({ type: 'info' }, options));
-  }
-}
+  return SweetAlertService;
+}();
