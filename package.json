@@ -1,6 +1,6 @@
 {
   "name": "ng2-sweetalert2",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A service wrapping sweetalert2 for angular2.",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,7 @@
   "homepage": "https://github.com/seiyria/ng2-sweetalert2#readme",
   "dependencies": {
     "lodash.assign": "^4.0.8",
-    "sweetalert2": "^2.2.5"
+    "sweetalert2": "^5.2.0"
   },
   "peerDependencies": {
     "@angular/platform-browser": "^2.0.0-rc.4"
