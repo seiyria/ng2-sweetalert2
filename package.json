@@ -1,6 +1,6 @@
 {
   "name": "ng2-sweetalert2",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A service wrapping sweetalert2 for angular2.",
   "main": "index.js",
   "scripts": {

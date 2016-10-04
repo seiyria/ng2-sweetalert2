@@ -13,8 +13,6 @@ var _sweetalert2 = _interopRequireDefault(_sweetalert);
 
 require('sweetalert2/dist/sweetalert2.min.css');
 
-var _browser = require('@angular/platform-browser/src/facade/browser');
-
 var _lodash = require('lodash.assign');
 
 var _lodash2 = _interopRequireDefault(_lodash);
@@ -31,7 +29,7 @@ var SweetAlertService = exports.SweetAlertService = function () {
   _createClass(SweetAlertService, [{
     key: 'swal',
     value: function swal() {
-      return _browser.window.swal.apply(_browser.window, arguments);
+      return _sweetalert2.default.apply(undefined, arguments);
     }
   }, {
     key: 'prompt',
@@ -41,7 +39,7 @@ var SweetAlertService = exports.SweetAlertService = function () {
         confirmButtonText: 'Submit',
         input: 'text'
       };
-      return _browser.window.swal((0, _lodash2.default)(baseOptions, options));
+      return (0, _sweetalert2.default)((0, _lodash2.default)(baseOptions, options));
     }
   }, {
     key: 'confirm',
@@ -51,7 +49,7 @@ var SweetAlertService = exports.SweetAlertService = function () {
         confirmButtonText: 'Confirm',
         type: 'warning'
       };
-      return _browser.window.swal((0, _lodash2.default)(baseOptions, options));
+      return (0, _sweetalert2.default)((0, _lodash2.default)(baseOptions, options));
     }
   }, {
     key: 'alert',
@@ -60,7 +58,7 @@ var SweetAlertService = exports.SweetAlertService = function () {
         confirmButtonText: 'OK',
         type: 'info'
       };
-      return _browser.window.swal((0, _lodash2.default)(baseOptions, options));
+      return (0, _sweetalert2.default)((0, _lodash2.default)(baseOptions, options));
     }
   }, {
     key: 'question',

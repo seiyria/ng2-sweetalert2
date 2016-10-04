@@ -1,7 +1,6 @@
 
 import sweetalert from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
-import { window } from '@angular/platform-browser/src/facade/browser';
 
 import assign from 'lodash.assign';
 
@@ -9,7 +8,7 @@ export class SweetAlertService {
   constructor() {}
 
   swal() {
-    return window.swal(...arguments);
+    return sweetalert(...arguments);
   }
 
   prompt(options) {
@@ -18,7 +17,7 @@ export class SweetAlertService {
       confirmButtonText: 'Submit',
       input: 'text'
     };
-    return window.swal(assign(baseOptions, options));
+    return sweetalert(assign(baseOptions, options));
   }
 
   confirm(options) {
@@ -27,7 +26,7 @@ export class SweetAlertService {
       confirmButtonText: 'Confirm',
       type: 'warning'
     };
-    return window.swal(assign(baseOptions, options));
+    return sweetalert(assign(baseOptions, options));
   }
 
   alert(options) {
@@ -35,7 +34,7 @@ export class SweetAlertService {
       confirmButtonText: 'OK',
       type: 'info'
     };
-    return window.swal(assign(baseOptions, options));
+    return sweetalert(assign(baseOptions, options));
   }
 
   question(options) {
