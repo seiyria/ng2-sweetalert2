@@ -1,3 +1,6 @@
+# DEPRECATED
+This library should not be used. Either import swal directly or use [this fork instead](https://github.com/toverux/ngsweetalert2).
+
 # ng2-sweetalert2
 A service wrapping sweetalert2 for angular 2.
 
